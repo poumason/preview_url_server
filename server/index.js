@@ -15,8 +15,11 @@ app.get('/', async (req, res) => {
   const link = req.query.link;
   if (link) {
     const result = await _getHTMLDom(link);
+
     res.send(result);
+    return;
   }
+
   res.send('Hello World!');
 });
 
